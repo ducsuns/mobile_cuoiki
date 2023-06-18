@@ -17,4 +17,4 @@ Cái này lúc đầu đặt tên hơi ngu nhưng mà làm rồi lười sửa l
 
 -hiển thị danh sách sinh viên,lớp ,lớp đã đăng kí, sinh viên đã đăng kí
 
-5. xây dựng Adapter để định nghĩa và hiện thị dữ liệu cho "-hiển thị danh sách sinh viên,lớp ,lớp đã đăng kí, sinh viên đã đăng kí"
+5. xây dựng Adapter để định nghĩa và hiện thị dữ liệu cho "danh sách sinh viên,lớp ,lớp đã đăng kí, sinh viên đã đăng kí"
