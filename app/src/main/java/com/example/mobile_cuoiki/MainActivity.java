@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.mobile_cuoiki.activity.AddClassActivity;
 import com.example.mobile_cuoiki.activity.AddStudentActivity;
 import com.example.mobile_cuoiki.activity.ListClassActivity;
-import com.example.mobile_cuoiki.activity.ListRegisterActivity;
+import com.example.mobile_cuoiki.activity.ListClassRegisterActivity;
 import com.example.mobile_cuoiki.activity.ListStudentActivity;
 import com.example.mobile_cuoiki.activity.RegisterActivity;
 
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         btnListRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), ListRegisterActivity.class);
+                Intent intent=new Intent(getApplicationContext(), ListClassRegisterActivity.class);
                 startActivity(intent);
             }
         });

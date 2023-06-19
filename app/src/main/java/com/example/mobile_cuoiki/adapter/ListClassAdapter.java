@@ -15,6 +15,8 @@ import com.example.mobile_cuoiki.model.Classes;
 
 import java.util.List;
 
+// cái này chưa bỏ đc vì cần xử lí sự kiện onclick item, nào bỏ đc thì update sau
+
 public class ListClassAdapter extends ArrayAdapter<Classes> {
 
     private OnItemClickListener mListener;

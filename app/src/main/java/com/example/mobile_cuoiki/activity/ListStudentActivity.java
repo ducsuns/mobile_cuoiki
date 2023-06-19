@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -27,7 +28,9 @@ public class ListStudentActivity extends AppCompatActivity {
         loadListStudent();
         Button btnSearch =findViewById(R.id.btnSearch);
 
-        btnSearch.setOnClickListener(new View.OnClickListener() { // onclick nút Tìm kiếm
+
+        // onclick nút Tìm kiếm
+        btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -45,19 +48,26 @@ public class ListStudentActivity extends AppCompatActivity {
     }
     private void loadListStudent() {  // hiển thị tất cả sinh viên, tương tự ListClass
         StudentQuery studentQuery = new StudentQuery(getBaseContext());
-        List<Student> studentList= studentQuery.getAll();
+        List<Student> studentList= studentQuery.getAll(); // xem lại StudentQuery
         ListView listStudentView = findViewById(R.id.listStudent);
-        ListStudentAdapter adapter=new ListStudentAdapter(ListStudentActivity.this,studentList);
 
-        listStudentView.setAdapter(adapter);
+        ArrayAdapter<Student> adapter=new ArrayAdapter<>(ListStudentActivity.this, android.R.layout.simple_list_item_1,studentList);
+
+//        ListStudentAdapter adapter=new ListStudentAdapter(ListStudentActivity.this,studentList);
+
+        listStudentView.setAdapter(adapter);// set adapter cho view
 
     }
     private void loadListStudentByNameAndYear(String name,String year) { // hiển thị các sinh viên được tìm kiếm theo tên, năm học
         StudentQuery studentQuery = new StudentQuery(getBaseContext());
         List<Student> studentList= studentQuery.getStudentsBySchoolYearAndName(name,year);
         ListView listStudentView = findViewById(R.id.listStudent);
-        ListStudentAdapter adapter=new ListStudentAdapter(ListStudentActivity.this,studentList);
-        listStudentView.setAdapter(adapter);
+
+        ArrayAdapter<Student> adapter=new ArrayAdapter<>(ListStudentActivity.this, android.R.layout.simple_list_item_1,studentList);// truyền studentlist và adapter.Đây là adapter có sẵn, sử dụng layout
+        // simple_list_item_1.xml có sẵn của android, lưu ý cần toString() ở model.Đc cái là nhah chứ không custom đc
+
+//        ListStudentAdapter adapter=new ListStudentAdapter(ListStudentActivity.this,studentList); // này là adapter tự custom. Lâu hơn cái dùng sẵn
+        listStudentView.setAdapter(adapter); // set adapter cho view
 
     }
 

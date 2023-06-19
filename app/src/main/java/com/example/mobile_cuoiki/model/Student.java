@@ -64,4 +64,9 @@ public class Student {
     public void setSchoolyear(String schoolyear) {
         this.schoolyear = schoolyear;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +"\n"+ "Họ và tên : "+name+"\n"+"Năm sinh: "+dob+"\n"+"Quê quán : "+hometown+"\n"+"Năm học: "+schoolyear;
+    }
 }

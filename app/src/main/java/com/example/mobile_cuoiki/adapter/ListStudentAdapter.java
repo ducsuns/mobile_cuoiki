@@ -17,6 +17,9 @@ import com.example.mobile_cuoiki.model.Student;
 import java.util.List;
 
 
+//đéo cần dùng nữa :))
+
+
 // tương tự ListClassAdapter, tuy nhiên ở đây chỉ định nghĩa hiển thị view item, k xử lí sự kiện onclick item
 public class ListStudentAdapter extends ArrayAdapter<Student> {
     public ListStudentAdapter(@NonNull Context context, @NonNull List<Student> listStudent) {
