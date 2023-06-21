@@ -28,6 +28,7 @@ public class ListStudentRegisterActivity extends AppCompatActivity {
         int classId = extras.getInt("CLASS_ID"); // lấy IdClass được truyền từ activity ListRegisterAcitivity
 
         StudentClassQuery studentClassQuery = new StudentClassQuery(getBaseContext());
+
         List<Student> studentList= studentClassQuery.getStudentsByClassID(classId);  // xem StudentClassQuery
 
         ListView listStudentView = findViewById(R.id.listStudentRegister);

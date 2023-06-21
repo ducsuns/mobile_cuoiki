@@ -26,7 +26,7 @@ public class AddStudentActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StudentQuery studentQuery = new StudentQuery(getBaseContext());
+                StudentQuery studentQuery = new StudentQuery(getApplicationContext());
 
                 String name = edtName.getText().toString();
                 String namsinh = edtNamsinh.getText().toString();
@@ -38,7 +38,7 @@ public class AddStudentActivity extends AppCompatActivity {
                 studentQuery.add(student);
                 Toast.makeText(getBaseContext(), "Add Success", Toast.LENGTH_SHORT).show();
                 reset();
-                setResult(RESULT_OK, null);
+//                setResult(RESULT_OK, null);
                 finish();
             }
         });

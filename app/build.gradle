@@ -5,10 +5,11 @@ plugins {
 android {
     compileSdk 33
 
+
     defaultConfig {
         applicationId "com.example.mobile_cuoiki"
         minSdk 28
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 

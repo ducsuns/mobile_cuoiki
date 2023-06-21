@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 Toast.makeText(getBaseContext(), "Add Success", Toast.LENGTH_SHORT).show();
                 reset();
-                setResult(RESULT_OK, null);
+//                setResult(RESULT_OK, null);
                 finish();
             }
         });

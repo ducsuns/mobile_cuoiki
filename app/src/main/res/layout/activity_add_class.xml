@@ -7,20 +7,31 @@
     tools:context=".activity.AddClassActivity"
     android:orientation="vertical">
     <EditText
+        android:background="@drawable/custom_edit"
+        android:id="@+id/edtId"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="  Nhập id"
+        />
+    <EditText
+        android:background="@drawable/custom_edit"
         android:id="@+id/edtName"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập tên lớp"
+        android:layout_height="35dp"
+        android:hint="  Nhập tên lớp"
         />
     <EditText
+        android:background="@drawable/custom_edit"
         android:id="@+id/edtMota"
        android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập mô tả"
+        android:layout_height="35dp"
+        android:hint="  Nhập mô tả"
         />
     <Button
+        android:background="@drawable/custom_button"
         android:id="@+id/btnAdd"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -28,6 +39,7 @@
         android:text="ADD"
         android:layout_gravity="center"/>
     <Button
+        android:background="@drawable/custom_button"
         android:id="@+id/btnBack"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"

@@ -43,15 +43,28 @@ public class StudentClassQuery {
     }
 
     public void add (StudentClass studentClass){  // đăng kí
-        SQLiteDatabase db= databaseHelper.getWritableDatabase();
-        ContentValues values= new ContentValues();
-        values.put(ID_STUDENT,studentClass.getIdStudent());
-        values.put(ID_CLASS, studentClass.getIdClass());
-        values.put(SEMESTER,studentClass.getSemester());
-        values.put(CREDIT, studentClass.getCredit());
+//        SQLiteDatabase db= databaseHelper.getWritableDatabase();
+//        ContentValues values= new ContentValues();
+//        values.put(ID_STUDENT,studentClass.getIdStudent());
+//        values.put(ID_CLASS, studentClass.getIdClass());
+//        values.put(SEMESTER,studentClass.getSemester());
+//        values.put(CREDIT, studentClass.getCredit());
+//
+//        db.insert(TABLE_NAME_3, null, values);
+//        db.close();
 
-        db.insert(TABLE_NAME_3, null, values);
+        SQLiteDatabase db= databaseHelper.getWritableDatabase();
+
+        ContentValues values =new ContentValues();
+
+        values.put(ID_STUDENT,studentClass.getIdStudent());
+        values.put(ID_CLASS,studentClass.getIdClass());
+        values.put(SEMESTER,studentClass.getSemester());
+        values.put(CREDIT,studentClass.getCredit());
+
+        db.insert(TABLE_NAME_3,null,values);
         db.close();
+
     }
 //    public List<StudentClass> getAll(){
 //        SQLiteDatabase db= databaseHelper.getReadableDatabase();
@@ -88,10 +101,12 @@ public class StudentClassQuery {
         if (cursor.moveToFirst()) {
             do {
                 Classes classes = new Classes();
+
                 classes.setId(cursor.getInt(cursor.getColumnIndex(ID_1)));
                 classes.setName(cursor.getString(cursor.getColumnIndex(NAME_1)));
                 classes.setDescription(cursor.getString(cursor.getColumnIndex(DESCRIPTION_1)));
                 classList.add(classes);
+
             } while (cursor.moveToNext());
         }
 
@@ -127,7 +142,7 @@ public class StudentClassQuery {
 
 
     @SuppressLint("Range")
-    public List<Student> getStudentsByClassID(int classID) { // list sinh viên đã đăng kí, thông kê theo lớp
+    public List<Student> getStudentsByClassID(int classID) { // list sinh viên đã đăng kí, thông kê theo lớp, sắp xếp giảm dần theo id
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
 //        String sqlQuery = "SELECT " + TABLE_NAME_2 + ".* " +

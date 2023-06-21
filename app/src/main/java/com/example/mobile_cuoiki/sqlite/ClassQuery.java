@@ -23,32 +23,71 @@ public class ClassQuery {
         this.context = context;
         this.databaseHelper = new DBHelper(context);
     }
-    public void add (Classes classes){   // thêm lớp
-        SQLiteDatabase db= databaseHelper.getWritableDatabase();
-        ContentValues values= new ContentValues();
-        values.put(NAME_1,classes.getName());
-        values.put(DESCRIPTION_1, classes.getDescription());
+    public void add (Classes classes){// thêm lớp
 
-        db.insert(TABLE_NAME_1, null, values);
+//        SQLiteDatabase db= databaseHelper.getWritableDatabase();
+//
+//        ContentValues values= new ContentValues();
+//
+//        values.put(NAME_1,classes.getName());
+//        values.put(DESCRIPTION_1, classes.getDescription());
+//
+//        db.insert(TABLE_NAME_1, null, values);
+//        db.close();
+        SQLiteDatabase db=databaseHelper.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+
+        values.put(NAME_1,classes.getName());
+        values.put(DESCRIPTION_1,classes.getDescription());
+
+        db.insert(TABLE_NAME_1,null,values);
         db.close();
+
+
     }
     public List<Classes> getAll(){  // list lớp
-        SQLiteDatabase db= databaseHelper.getReadableDatabase();
-        String sqlQuery = "SELECT * FROM " + TABLE_NAME_1;
-        List<Classes> classList =new ArrayList<>();
-        Cursor cursor = db.rawQuery(sqlQuery,null);
-        if(cursor.moveToFirst()){
-            do{
-                Classes classes = new Classes();
-                classes.setId(cursor.getInt(0));
-                classes.setName(cursor.getString(1));
-                classes.setDescription(cursor.getString(2));
 
-                classList.add(classes);
-            }while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-        return classList;
+//        SQLiteDatabase db= databaseHelper.getReadableDatabase();
+//
+//        String sqlQuery = "SELECT * FROM " + TABLE_NAME_1;
+//
+//        List<Classes> classList =new ArrayList<>();
+//
+//        Cursor cursor = db.rawQuery(sqlQuery,null);
+//
+//        if(cursor.moveToFirst()){
+//            do{
+//                Classes classes = new Classes();
+//
+//                classes.setId(cursor.getInt(0));
+//                classes.setName(cursor.getString(1));
+//                classes.setDescription(cursor.getString(2));
+//
+//                classList.add(classes);
+//            }while (cursor.moveToNext());
+//        }
+//        cursor.close();
+//        db.close();
+//        return classList;
+        SQLiteDatabase db= databaseHelper.getReadableDatabase();
+
+        String sqlQuery= "SELECT * FROM " + TABLE_NAME_1;
+
+        List<Classes> classesList =new ArrayList<>();
+         Cursor cursor= db.rawQuery(sqlQuery,null);
+         if(cursor.moveToFirst())
+             do{
+                 Classes classes =new Classes();
+                 classes.setId(cursor.getInt(0));
+                 classes.setName(cursor.getString(1));
+                 classes.setDescription(cursor.getString(2));
+
+                 classesList.add(classes);
+
+             }while (cursor.moveToNext());
+         cursor.close();
+         db.close();
+         return classesList;
     }
 }

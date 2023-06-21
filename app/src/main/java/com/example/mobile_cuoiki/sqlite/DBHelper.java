@@ -9,11 +9,13 @@ import androidx.annotation.Nullable;
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME="PTIT";
     private static final int DB_VERSION=1;
+
     // class
     private static final String TABLE_NAME_1="class";
     private static final String ID_1="id";
     private static final String NAME_1="name";
     private static final String DESCRIPTION_1="description";
+
     //student
     private static final String TABLE_NAME_2="student";
     private static final String ID_2="id";
@@ -21,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DOB="dob";
     private static final String HOMETOWN="hometown";
     private static final String SCHOOLYEAR="schoolyear";
+
     //student_class
     private static final String TABLE_NAME_3="studentclass";
     private static final String ID_3="id";
@@ -28,6 +31,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String ID_CLASS="idclass";
     private static final String SEMESTER="semester";
     private static final String CREDIT="credit";
+
+
 
     public DBHelper(@Nullable Context context) {
         super(context, DB_NAME,null, DB_VERSION);
@@ -48,6 +53,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 DOB + " TEXT, " +
                 HOMETOWN + " TEXT, " +
                 SCHOOLYEAR + " TEXT)";
+
 
 
         // Tạo bảng studentclass
