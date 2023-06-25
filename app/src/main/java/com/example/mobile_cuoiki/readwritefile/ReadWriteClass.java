@@ -1,18 +1,15 @@
-package com.example.mobile_cuoiki.readwrite;
+package com.example.mobile_cuoiki.readwritefile;
 
 import android.content.Context;
 
 import com.example.mobile_cuoiki.model.Classes;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +36,6 @@ public class ReadWriteClass {
         }
 
     }
-
-
 
     public List<Classes> readClass(Context context, String fname){
         ArrayList<Classes> list =new ArrayList<>();

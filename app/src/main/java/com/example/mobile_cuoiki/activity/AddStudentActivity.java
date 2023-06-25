@@ -2,7 +2,6 @@ package com.example.mobile_cuoiki.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.mobile_cuoiki.R;
-import com.example.mobile_cuoiki.model.Classes;
 import com.example.mobile_cuoiki.model.Student;
-import com.example.mobile_cuoiki.sqlite.ClassQuery;
-import com.example.mobile_cuoiki.sqlite.StudentQuery;
-// thêm sinh viên mới, tượng tự AddClass
+import com.example.mobile_cuoiki.sqlite.StudentDAO;
+
 public class AddStudentActivity extends AppCompatActivity {
     private Button btnAdd, btnBack;
     private EditText edtName,edtQuequan,edtNamsinh,edtNamhoc;
@@ -26,7 +23,7 @@ public class AddStudentActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StudentQuery studentQuery = new StudentQuery(getApplicationContext());
+                StudentDAO studentDAO = new StudentDAO(getApplicationContext());
 
                 String name = edtName.getText().toString();
                 String namsinh = edtNamsinh.getText().toString();
@@ -35,10 +32,9 @@ public class AddStudentActivity extends AppCompatActivity {
 
 
                 Student student= new Student(name,namsinh,quequan,namhoc);
-                studentQuery.add(student);
+                studentDAO.add(student);
                 Toast.makeText(getBaseContext(), "Add Success", Toast.LENGTH_SHORT).show();
                 reset();
-//                setResult(RESULT_OK, null);
                 finish();
             }
         });

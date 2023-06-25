@@ -10,28 +10,34 @@
         android:id="@+id/edtName"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
         android:hint="Nhập tên sinh viên"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
+
         />
     <EditText
         android:id="@+id/edtNamsinh"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập năm sinh"
         />
     <EditText
         android:id="@+id/edtQuequan"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập quê quán"
         />
     <EditText
         android:id="@+id/edtNamhoc"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập năm học"
         />
     <Button
@@ -40,13 +46,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/custom_button"/>
     <Button
         android:id="@+id/btnBack"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BACK"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/custom_button"/>
 
 </LinearLayout>

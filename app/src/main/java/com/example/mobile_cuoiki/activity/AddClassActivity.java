@@ -7,13 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.mobile_cuoiki.R;
 import com.example.mobile_cuoiki.model.Classes;
-import com.example.mobile_cuoiki.readwrite.ReadWriteClass;
-import com.example.mobile_cuoiki.sqlite.ClassQuery;
-// thêm lớp mới
+import com.example.mobile_cuoiki.readwritefile.ReadWriteClass;
+
 public class AddClassActivity extends AppCompatActivity {
     private Button btnAdd, btnBack;
     private EditText  edtName,edtMota,edtId;
@@ -48,7 +46,7 @@ public class AddClassActivity extends AppCompatActivity {
         edtId.setText("");
     }
     public void init(){
-        btnAdd=findViewById(R.id.btnAdd); // tìm kiếm view trong activity_add_class.xml
+        btnAdd=findViewById(R.id.btnAdd);
         btnBack=findViewById(R.id.btnBack);
         edtMota=findViewById(R.id.edtMota);
         edtName=findViewById(R.id.edtName);

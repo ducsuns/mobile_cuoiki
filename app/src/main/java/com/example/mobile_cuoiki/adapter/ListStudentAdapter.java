@@ -17,10 +17,7 @@ import com.example.mobile_cuoiki.model.Student;
 import java.util.List;
 
 
-//đéo cần dùng nữa :))
 
-
-// tương tự ListClassAdapter, tuy nhiên ở đây chỉ định nghĩa hiển thị view item, k xử lí sự kiện onclick item
 public class ListStudentAdapter extends ArrayAdapter<Student> {
     public ListStudentAdapter(@NonNull Context context, @NonNull List<Student> listStudent) {
         super(context, R.layout.item_student, listStudent);
@@ -35,7 +32,7 @@ public class ListStudentAdapter extends ArrayAdapter<Student> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_student,parent,false);
         }
 
-        TextView id=convertView.findViewById(R.id.tvID); // tìm kiếm view trong item_student.xml
+        TextView id=convertView.findViewById(R.id.tvID);
         TextView name=convertView.findViewById(R.id.tvName);
         TextView namsinh=convertView.findViewById(R.id.tvNamsinh);
         TextView quequan=convertView.findViewById(R.id.tvQuequan);

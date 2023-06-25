@@ -2,20 +2,15 @@ package com.example.mobile_cuoiki.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.mobile_cuoiki.R;
 import com.example.mobile_cuoiki.adapter.ListClassAdapter;
 import com.example.mobile_cuoiki.model.Classes;
-import com.example.mobile_cuoiki.readwrite.ReadWriteClass;
-import com.example.mobile_cuoiki.sqlite.ClassQuery;
+import com.example.mobile_cuoiki.readwritefile.ReadWriteClass;
+import com.example.mobile_cuoiki.sqlite.ClassDAO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListClassActivity extends AppCompatActivity {
@@ -26,15 +21,14 @@ public class ListClassActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_class);
         loadListClass();
     }
-    private void loadListClass() { // hiển thị tất cả các class
+    private void loadListClass() {
 
-        ReadWriteClass readWriteClass =new ReadWriteClass(getApplicationContext());
+        ClassDAO classDAO =new ClassDAO(getBaseContext());
 
-        List<Classes> classesList =readWriteClass.readClass(getApplicationContext(),"class.txt");
+        List<Classes> classesList =classDAO.getAll();
 
         ListView listView=findViewById(R.id.listClass);
 
-//        ArrayAdapter<Classes> adapter =new ArrayAdapter<>(ListClassActivity.this, android.R.layout.simple_list_item_1,classesList);
 
         ListClassAdapter adapter=new ListClassAdapter(ListClassActivity.this,classesList);
 

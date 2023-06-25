@@ -63,7 +63,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 ID_CLASS + " INTEGER, " +
                 SEMESTER + " TEXT, "+
                 CREDIT + " TEXT, " +
-                "FOREIGN KEY(" + ID_STUDENT + ") REFERENCES "+ TABLE_NAME_2 + "(" + ID_2 + "), " +   //  khóa ngoại
+                "FOREIGN KEY(" + ID_STUDENT + ") REFERENCES "+ TABLE_NAME_2 + "(" + ID_2 + "), " +
                 "FOREIGN KEY(" + ID_CLASS + ") REFERENCES "+ TABLE_NAME_1 + "(" + ID_1 + ")" +
                 ")";
         sqLiteDatabase.execSQL(studentSql); //lệnh thực thi
@@ -73,11 +73,8 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { // lớp phụ trợ, được gọi khi phiên bản sqlite thay đổi
-        // "phương thức `onUpgrade()` rất cần thiết trong một ứng dụng Android, bởi vì khi bạn thêm hoặc sửa đổi các bảng trong cơ
-        // sở dữ liệu và phát hành một bản cập nhật cho ứng dụng, bạn cần phải cập nhật cấu trúc cơ sở dữ liệu để phù hợp với phiên
-        // bản mới của chương trình"
-        String classesSql="DROP TABLE IF EXISTS class"; //để xóa các bảng cũ trong cơ sở dữ liệu và tái tạo chúng với cấu trúc mới phù hợp với phiên bản sqlite mới của ứng dụng.
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        String classesSql="DROP TABLE IF EXISTS class";
         String studentSql="DROP TABLE IF EXISTS student";
         String studentclassSql="DROP TABLE IF EXISTS studentclass";
 

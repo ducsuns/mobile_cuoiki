@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        btnAddClass.setOnClickListener(new View.OnClickListener() {   // onclick
+        btnAddClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), AddClassActivity.class);  // chuyển đến activity "AddClassActivity"
+                Intent intent=new Intent(getApplicationContext(), AddClassActivity.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void init(){
-        btnAddClass=findViewById(R.id.btnAddClass); // tìm kiếm view trong XML (activity_main.xml)
+        btnAddClass=findViewById(R.id.btnAddClass);
         btnAddStudent=findViewById(R.id.btnAddStudent);
         btnRegister=findViewById(R.id.btnRegister);
         btnListClass=findViewById(R.id.btnListClass);

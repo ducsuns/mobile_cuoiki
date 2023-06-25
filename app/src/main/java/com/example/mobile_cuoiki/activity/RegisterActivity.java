@@ -9,11 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.mobile_cuoiki.R;
-import com.example.mobile_cuoiki.model.Student;
 import com.example.mobile_cuoiki.model.StudentClass;
-import com.example.mobile_cuoiki.sqlite.StudentClassQuery;
-import com.example.mobile_cuoiki.sqlite.StudentQuery;
-// thêm đăng kí, tương tự thêm sinh viên và thêm lớp
+import com.example.mobile_cuoiki.sqlite.StudentClassDAO;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText edtIDstudent, edtIDclass, edtKihoc,edtTinchi;
     private Button btnAdd,btnBack;
@@ -22,10 +20,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         init();
-        btnAdd.setOnClickListener(new View.OnClickListener() { // onclick nút Add
+        btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StudentClassQuery studentclassQuery = new StudentClassQuery(getBaseContext());
+                StudentClassDAO studentclassDAO = new StudentClassDAO(getBaseContext());
 
                 String idClass = edtIDclass.getText().toString();
                 String idStudent = edtIDstudent.getText().toString();
@@ -33,11 +31,10 @@ public class RegisterActivity extends AppCompatActivity {
                 String tinchi=edtTinchi.getText().toString();
 
                 StudentClass studentClass=new StudentClass(Integer.parseInt(idStudent),Integer.parseInt(idClass),kihoc,Integer.parseInt(tinchi));
-                studentclassQuery.add(studentClass);
+                studentclassDAO.add(studentClass);
 
                 Toast.makeText(getBaseContext(), "Add Success", Toast.LENGTH_SHORT).show();
                 reset();
-//                setResult(RESULT_OK, null);
                 finish();
             }
         });

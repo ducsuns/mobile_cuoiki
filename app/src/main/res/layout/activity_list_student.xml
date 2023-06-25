@@ -9,21 +9,26 @@
    >
 
     <EditText
+        android:layout_margin="20dp"
         android:id="@+id/edtSearchName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập tên"/>
     <EditText
+        android:layout_margin="20dp"
         android:id="@+id/edtSearchYear"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập năm học"/>
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Tìm kiếm"/>
+        android:text="Tìm kiếm"
+        android:background="@drawable/custom_button"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

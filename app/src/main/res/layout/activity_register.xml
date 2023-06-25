@@ -10,28 +10,32 @@
         android:id="@+id/edtMasinhvien"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập mã sinh viên"
         />
     <EditText
         android:id="@+id/edtMalop"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập mã lớp"
         />
     <EditText
         android:id="@+id/edtKihoc"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập kì học"
         />
     <EditText
         android:id="@+id/edtSotinchi"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/custom_edit"
         android:hint="Nhập số tín chỉ"
         />
     <Button
@@ -40,8 +44,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/custom_button"/>
     <Button
+        android:background="@drawable/custom_button"
         android:id="@+id/btnBack"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
